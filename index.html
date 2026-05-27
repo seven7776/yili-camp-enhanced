@@ -137,12 +137,10 @@
   .delay-3 { transition-delay: .3s }
 
   /* itinerary accordion */
-  .day-card { cursor: pointer; transition: box-shadow .3s; }
-  .day-card:hover { box-shadow: 0 4px 20px rgba(122,158,127,.25); }
-  .day-card .day-body { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .4s ease; padding: 0 15px; }
-  .day-card.open .day-body { max-height: 200px; padding: 13px 15px; }
-  .day-card .arrow { transition: transform .3s; font-size: 12px; color: rgba(255,255,255,.7); }
-  .day-card.open .arrow { transform: rotate(180deg); }
+  .day-card { }
+
+  .day-card .day-body { display: block; }
+
 
   /* section images */
   .section-img { width: 100%; border-radius: 12px; margin: 8px 0 4px; object-fit: cover; max-height: 180px; }
@@ -281,7 +279,7 @@
 </div>
 <div class="itinerary">
 
-<div class="day-card" onclick="this.classList.toggle('open')">
+<div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 1</span>
@@ -296,7 +294,7 @@
     </div>
   </div>
 
-  <div class="day-card" onclick="this.classList.toggle('open')">
+  <div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 2</span>
@@ -311,7 +309,7 @@
     </div>
   </div>
 
-  <div class="day-card" onclick="this.classList.toggle('open')">
+  <div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 3</span>
@@ -326,8 +324,8 @@
     </div>
   </div>
 
-  <div class="day-card" onclick="this.classList.toggle('open')">
-    <div class="day-header>
+<div class="day-card">
+    <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 4</span>
         <span class="day-title">天山花海</span>
@@ -341,7 +339,7 @@
     </div>
   </div>
 
-<div class="day-card" onclick="this.classList.toggle('open')">
+<div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 5</span>
@@ -356,7 +354,7 @@
     </div>
   </div>
 
-<div class="day-card" onclick="this.classList.toggle('open')">
+<div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 6</span>
@@ -371,7 +369,7 @@
     </div>
   </div>
 
-  <div class="day-card" onclick="this.classList.toggle('open')">
+  <div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 7</span>
@@ -386,7 +384,7 @@
     </div>
   </div>
 
-  <div class="day-card" onclick="this.classList.toggle('open')">
+  <div class="day-card">
     <div class="day-header">
       <div class="day-left">
         <span class="day-num">Day 8</span>
@@ -536,10 +534,7 @@ window.addEventListener('scroll', function() {
   fcta.classList.toggle('show', window.scrollY > 480);
 }, {passive: true});
 
-// accordion: make all .day-card clickable
-// (already done inline) — add first open state to Day 1
-var firstDay = document.querySelector('.day-card');
-if (firstDay) firstDay.classList.add('open');
+
 </script>
 </body>
 </html>
